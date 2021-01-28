@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log('submiting...')
       this.$auth.loginWith('local', {
         data: {
           email: this.email,
