@@ -55,8 +55,7 @@ export default {
       endpoints: {
         login: {
           url: '/api/login',
-          method: 'post',
-          propertyName: 'token'
+          method: 'post'
         }
         // user: {
         //     url: '/user/status',

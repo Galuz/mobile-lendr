@@ -13,21 +13,18 @@
     </b-alert>
     <form id="login" ref="form" @submit.prevent="onSubmit">
       <input
-        v-model="phone"
+        v-model="email"
         type="text"
         placeholder="Número de teléfono"
-        class="input-normal phone"
+        class="input-normal"
         autocomplete="new-password"
-        maxlength="10"
-        minlength="10"
         required
-        @keypress="onlyNumbers($event)"
       >
       <input
         v-model="password"
         type="password"
         placeholder="Contraseña"
-        class="input-normal password"
+        class="input-normal"
         autocomplete="new-password"
         minlength="6"
         maxlength="20"
@@ -45,13 +42,19 @@ export default {
   data () {
     return {
       showDismissibleAlert: false,
-      phone: '',
+      email: '',
       password: ''
     }
   },
   methods: {
     onSubmit () {
       console.log('submiting...')
+      this.$auth.loginWith('local', {
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      })
     },
     // validations
     onlyNumbers (e) {
