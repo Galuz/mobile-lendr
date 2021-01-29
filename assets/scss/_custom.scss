@@ -13,3 +13,18 @@
         }
     }
 }
+
+.index-loggedin {
+    .table {
+        color: #fff;
+    }
+    .table-hover tbody tr {
+        &:hover {
+            color: #fff;
+        }
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #ffffff40;
+        ;
+    }
+}

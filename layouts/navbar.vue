@@ -1,6 +1,6 @@
 <template>
   <div class="layout-nav">
-    <b-navbar type="dark" variant="dark">
+    <b-navbar class="b-navbar" type="dark" variant="dark">
       <b-navbar-brand href="#">
         <img src="@/assets/images/robot.svg" alt="Logo">
         <span>Integra <b>Software</b></span>
@@ -25,5 +25,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.b-navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 76px;
+}
 </style>
