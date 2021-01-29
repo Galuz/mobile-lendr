@@ -40,7 +40,7 @@
 <script>
 export default {
   middleware: 'user-auth',
-  
+
   data () {
     return {
       showDismissibleAlert: false,

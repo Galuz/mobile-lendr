@@ -1,6 +1,6 @@
 <template>
   <div class="main-loggedin">
-    <router-view />
+    <NuxtChild  />
   </div>
 </template>
 

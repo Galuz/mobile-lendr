@@ -14,6 +14,7 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <Nuxt />
   </div>
 </template>
 

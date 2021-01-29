@@ -14,61 +14,59 @@
       <b-carousel-slide
         class="slide-img"
         img-src="@/assets/images/splash/splash-1.png"
-      ></b-carousel-slide>
+      />
       <b-carousel-slide
         class="slide-img"
         img-src="@/assets/images/splash/splash-2.png"
-      ></b-carousel-slide>
+      />
       <b-carousel-slide
         class="slide-img"
         img-src="@/assets/images/splash/splash-3.png"
-      ></b-carousel-slide>
+      />
     </b-carousel>
     <img src="@/assets/images/robot.svg" alt="Logo">
     <p v-if="slide === 0">
-      Cuenta atrás para el Tour de Pokémon GO: <br />
+      Cuenta atrás para el Tour de Pokémon GO: <br>
       Kanto, ¡celebra con nosotros la región de Johto!
     </p>
     <p v-if="slide === 1">
-      Día del Incienso: Pokémon de tipo <br />
+      Día del Incienso: Pokémon de tipo <br>
       Eléctrico y Dragón ¡y protagonizado por Mareep!
     </p>
     <p v-if="slide === 2">
-      La Temporada 6 de la Liga Combates GO <br />
+      La Temporada 6 de la Liga Combates GO <br>
       empieza el lunes, 30 de noviembre de 2020, a las 22:00 CET (13:00 PST)
     </p>
     <button class="btn-celeste" :disabled="disabled" @click="toLogin()">
       Iniciar sesión
     </button>
-    <span
-      >¿No tienes cuenta?
-      <NuxtLink to="/Register" class="underline">Regístrate</NuxtLink></span
-    >
+    <span>¿No tienes cuenta?
+      <NuxtLink to="/Register" class="underline">Regístrate</NuxtLink></span>
   </div>
 </template>
 
 <script>
 export default {
   middleware: 'user-auth',
-  data() {
+  data () {
     return {
       slide: 0,
       interval: 4000,
-      disabled: true,
+      disabled: true
     }
   },
   methods: {
-    slidingStart(slide) {
+    slidingStart (slide) {
       this.slide = slide
       if (slide === 2) {
         this.disabled = false
         this.interval = 0
       }
     },
-    toLogin() {
+    toLogin () {
       this.$router.push('Login')
-    },
-  },
+    }
+  }
 }
 </script>
 

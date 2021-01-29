@@ -34,34 +34,34 @@
 <script>
 export default {
   middleware: 'user-auth',
-  
+
   data () {
     return {
       email: '',
       password: '',
-      showDismissibleAlert: false,
+      showDismissibleAlert: false
     }
   },
   methods: {
     onSubmit () {
       console.log('submitting...')
-      this.$axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDa687seGPCxKLHvF4350gzh29DLpnpTlI',{
+      this.$axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDa687seGPCxKLHvF4350gzh29DLpnpTlI', {
         email: this.email,
         password: this.password,
         returnSecureToken: true
       })
-      .then(() => {
-        this.$auth.loginWith('local', {
-          data: {
-            email: this.email,
-            password: this.password,
-            returnSecureToken: true
-          }
+        .then(() => {
+          this.$auth.loginWith('local', {
+            data: {
+              email: this.email,
+              password: this.password,
+              returnSecureToken: true
+            }
+          })
         })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }
