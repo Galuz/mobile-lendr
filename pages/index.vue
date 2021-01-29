@@ -26,18 +26,16 @@
     </b-carousel>
     <img src="@/assets/images/robot.svg" alt="Logo">
     <p v-if="slide === 0">
-      Consigue todas tus refacciones en <br />
-      un solo lugar y en tres sencillos <br />
-      pasos: cotiza, elige y compra.
+      Cuenta atrás para el Tour de Pokémon GO: <br />
+      Kanto, ¡celebra con nosotros la región de Johto!
     </p>
     <p v-if="slide === 1">
-      Enfócate en tu trabajo. <br />
-      No pases más tiempo en llamadas <br />
-      buscando refacciones.
+      Día del Incienso: Pokémon de tipo <br />
+      Eléctrico y Dragón ¡y protagonizado por Mareep!
     </p>
     <p v-if="slide === 2">
-      Lleva el control digital de tus <br />
-      pedidos, pagos y devoluciones.
+      La Temporada 6 de la Liga Combates GO <br />
+      empieza el lunes, 30 de noviembre de 2020, a las 22:00 CET (13:00 PST)
     </p>
     <button class="btn-celeste" :disabled="disabled" @click="toLogin()">
       Iniciar sesión
