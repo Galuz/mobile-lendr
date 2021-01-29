@@ -11,5 +11,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.index-loggedin{
+  min-height: 100vh;
+  h3{
+    color: #fff;
+  }
+}
 </style>

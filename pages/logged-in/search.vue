@@ -11,5 +11,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.search{
+  h3{
+    color: #fff;
+  }
+}
 </style>

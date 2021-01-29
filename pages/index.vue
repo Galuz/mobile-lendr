@@ -1,15 +1,19 @@
 <template>
   <div class="home">
-    <h3>Listado de softwares</h3>
+    <h3>home</h3>
   </div>
 </template>
 
 <script>
 export default {
-
+  
 }
 </script>
 
 <style lang="scss" scoped>
-
+.home{
+  h3{
+    color: #fff;
+  }
+}
 </style>
