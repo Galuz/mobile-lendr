@@ -6,7 +6,7 @@
         <span>Integra <b>Software</b></span>
       </b-navbar-brand>
       <b-navbar-toggle target="nav-text-collapse" />
-      <b-collapse id="nav-text-collapse" v-model="isCollapseOpen" is-nav>
+      <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav class="nav-item ml-auto">
           <li>
             Miguel Mencía
