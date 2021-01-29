@@ -44,7 +44,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://identitytoolkit.googleapis.com/v1/'
+    baseURL: ''
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -55,15 +55,14 @@ export default {
       local: {
         endpoints: {
           login: {
-            url: 'accounts:signInWithPassword?key=AIzaSyDa687seGPCxKLHvF4350gzh29DLpnpTlI',
+            url: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDa687seGPCxKLHvF4350gzh29DLpnpTlI',
             method: 'post',
             propertyName: 'idToken'
+          },
+          user: {
+            url: 'https://us-central1-mobile-lendr.cloudfunctions.net/user',
+            method: 'get'
           }
-          // user: {
-          //     url: '/user/status',
-          //     method: 'get',
-          //     propertyName: 'phoneNumber',
-          // },
         }
       }
     }

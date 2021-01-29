@@ -1,10 +1,15 @@
 const functions = require('firebase-functions')
-const admin = require('firebase-admin')
 const express = require('express')
 const cors = require('cors')
+
+const admin = require('firebase-admin')
 admin.initializeApp()
 
+const authMiddleware = require('./authMiddleware')
+
 const app = express()
+app.use(cors({ origin: true }))
+app.use(authMiddleware)
 
 app.get('/', async (req, res) => {
   const snapshot = await admin.firestore().collection('users').get()
