@@ -35,7 +35,8 @@ export default {
   methods: {
     test() {
       localStorage.clear()
-      this.$router.push('/login')
+      this.$cookies.removeAll()
+      location.reload();
     }
   }
 }
