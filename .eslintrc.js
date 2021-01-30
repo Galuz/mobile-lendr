@@ -11,8 +11,21 @@ module.exports = {
     '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-  ],
+  plugins: [],
   // add your custom rules here
-  rules: {}
+  rules: {
+    quotes: ['error', 'single'],
+    'comma-dangle': ['error', 'never'],
+    'no-param-reassign': ['error', { props: false }],
+    'import/extensions': ['off', 'never'],
+    'import/prefer-default-export': 'off',
+    'vue/html-quotes': ['error', 'double'],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 3,
+      multiline: {
+        max: 1,
+        allowFirstLine: false
+      }
+    }]
+  }
 }

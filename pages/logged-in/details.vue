@@ -1,15 +1,26 @@
 <template>
   <div class="details">
     <h3>detalles</h3>
-    <pre>{{ pokemonId }}</pre>
+    <b-table
+      :items="items"
+      :fields="fields"
+      selectable
+      striped
+      hover
+      responsive
+    />
   </div>
 </template>
 
 <script>
+const fields = [
+  { key: 'name', label: 'Nombre' }
+]
 export default {
   data () {
     return {
-      items: []
+      items: [],
+      fields
     }
   },
   computed: {
@@ -18,12 +29,15 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$store.getters.getPokemon, 'mounteds')
     const endpoint = this.$store.getters.getPokemon
     this.$axios.get(endpoint)
       .then((response) => {
         const { moves } = response.data
-        this.items = moves
+        Object.keys(moves).forEach((key) => {
+          console.log(moves[key].move)
+          // eslint-disable-next-line
+          this.items.push({name: moves[key].move.name})
+        })
       }).catch((err) => {
         console.log(err)
       })
