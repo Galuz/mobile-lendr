@@ -14,6 +14,7 @@
       striped
       hover
       responsive
+      @row-clicked="onRowClicked"
     />
   </div>
 </template>
@@ -45,6 +46,11 @@ export default {
         }).catch((err) => {
           console.log(err)
         })
+    },
+    onRowClicked (val) {
+      console.log(val, 'clicked')
+      this.$store.commit('add', val.url)
+      this.$router.push('details')
     }
   }
 }
