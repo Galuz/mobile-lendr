@@ -7,8 +7,16 @@
         Agregar nuevo
       </button>
     </div>
+    <div class="filter">
+      <input
+        v-model="filterValue"
+        type="text"
+        placeholder="Nombre del pokemon"
+        class="input-normal"
+      >
+    </div>
     <b-table
-      :items="items"
+      :items="filteredArray"
       :fields="fields"
       selectable
       striped
@@ -27,7 +35,14 @@ export default {
   data () {
     return {
       items: [],
-      fields
+      filteredArray: [],
+      fields,
+      filterValue: ''
+    }
+  },
+  watch: {
+    filterValue (value) {
+      this.filter(value)
     }
   },
   mounted () {
@@ -40,10 +55,21 @@ export default {
         .then((response) => {
           const { results } = response.data
           this.items = results
+          this.filter()
         }).catch((err) => {
           // eslint-disable-next-line
           console.log(err)
         })
+    },
+    filter (value) {
+      if (value) {
+        const array = this.items.filter(function (pokemon) {
+          return pokemon.name === value
+        })
+        this.filteredArray = array
+      } else {
+        this.filteredArray = this.items
+      }
     },
     onRowClicked (val) {
       this.$store.commit('add', val.url)
@@ -81,6 +107,12 @@ export default {
     button{
       width: unset;
       margin-left: auto;
+    }
+  }
+  .filter{
+    .input-normal{
+      background: #fff;
+      color: #000;
     }
   }
 }

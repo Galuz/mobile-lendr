@@ -41,8 +41,8 @@ export default {
         console.log(err)
       })
   },
-  methods:{
-    goto(){
+  methods: {
+    goto () {
       this.$router.push('/logged-in')
     }
   }
