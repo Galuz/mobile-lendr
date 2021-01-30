@@ -1,10 +1,15 @@
 <template>
   <div class="details">
     <h3>detalles</h3>
+    <div class="header">
+      <h2>Listado de pokemones</h2>
+      <button class="btn-outline-green">
+        Buscar otro pokemon
+      </button>
+    </div>
     <b-table
       :items="items"
       :fields="fields"
-      selectable
       striped
       hover
       responsive
@@ -23,22 +28,16 @@ export default {
       fields
     }
   },
-  computed: {
-    pokemonId () {
-      return this.$store.getters.getPokemon
-    }
-  },
   mounted () {
     const endpoint = this.$store.getters.getPokemon
     this.$axios.get(endpoint)
       .then((response) => {
         const { moves } = response.data
         Object.keys(moves).forEach((key) => {
-          console.log(moves[key].move)
-          // eslint-disable-next-line
-          this.items.push({name: moves[key].move.name})
+          this.items.push({ name: moves[key].move.name })
         })
       }).catch((err) => {
+        // eslint-disable-next-line
         console.log(err)
       })
   }
@@ -47,13 +46,33 @@ export default {
 
 <style lang="scss" scoped>
 .details{
+  padding: 32px;
+  background-color: #1f2129;
+  min-height: 100vh;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
   h3{
     margin-top: 76px;
+    font-family: 'Roboto-Regular';
+    font-size: 12px;
     color: #fff;
+    text-align: left;
   }
-  pre{
-    color: #fff;
-    font-size: 16px;
+  .header{
+    display: flex;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 16px;
+    h2{
+      font-family: 'Roboto-Regular';
+      font-size: 16px;
+      color: #fff;
+      margin: auto 0;
+    }
+    button{
+      width: unset;
+      margin-left: auto;
+    }
   }
 }
 </style>

@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log('submitting...')
       this.$axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDa687seGPCxKLHvF4350gzh29DLpnpTlI', {
         email: this.email,
         password: this.password,
@@ -60,6 +59,7 @@ export default {
           })
         })
         .catch((err) => {
+          // eslint-disable-next-line
           console.log(err)
         })
     }

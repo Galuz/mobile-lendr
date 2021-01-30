@@ -32,23 +32,20 @@ export default {
   },
   mounted () {
     this.loadData()
-    console.log('data...')
   },
   methods: {
     loadData () {
-      console.log('data...')
       const base = 'https://pokeapi.co/api/v2/'
       this.$axios.get(`${base}pokemon?limit=20`)
         .then((response) => {
           const { results } = response.data
           this.items = results
-          console.log(results)
         }).catch((err) => {
+          // eslint-disable-next-line
           console.log(err)
         })
     },
     onRowClicked (val) {
-      console.log(val, 'clicked')
       this.$store.commit('add', val.url)
       this.$router.push('details')
     }

@@ -10,7 +10,6 @@ export const getters = {
 
 export const mutations = {
   add (state, url) {
-    console.log('add mutation')
     state.test = url
   }
 }
