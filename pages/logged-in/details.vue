@@ -3,7 +3,7 @@
     <h3>detalles</h3>
     <div class="header">
       <h2>Listado de pokemones</h2>
-      <button class="btn-outline-green">
+      <button class="btn-outline-green" @click="goto()">
         Buscar otro pokemon
       </button>
     </div>
@@ -40,6 +40,11 @@ export default {
         // eslint-disable-next-line
         console.log(err)
       })
+  },
+  methods:{
+    goto(){
+      this.$router.push('/logged-in')
+    }
   }
 }
 </script>

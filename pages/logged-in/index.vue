@@ -47,7 +47,7 @@ export default {
     },
     onRowClicked (val) {
       this.$store.commit('add', val.url)
-      this.$router.push('details')
+      this.$router.push('/logged-in/details')
     }
   }
 }
