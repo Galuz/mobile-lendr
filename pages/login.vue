@@ -56,6 +56,9 @@ export default {
           password: this.password,
           returnSecureToken: true
         }
+      }).then((response) => {
+        const { email } = response.data
+        localStorage.setItem('user', email)
       })
     },
     // validations

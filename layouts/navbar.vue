@@ -8,9 +8,13 @@
       <b-navbar-toggle target="nav-text-collapse" />
       <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav class="nav-item ml-auto">
-          <li>
-            Miguel Mencía
-          </li>
+          <b-nav-item-dropdown right>
+            <!-- Using 'button-content' slot -->
+            <template #button-content>
+              <em>{{ user }}</em>
+            </template>
+            <b-dropdown-item href="#" @click="test()">Cerrar sesión</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -20,7 +24,20 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      user: ''
+    }
+  },
+  mounted()  {
+    this.user = localStorage.getItem('user' || '')
+  },
+  methods: {
+    test() {
+      localStorage.clear()
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 
