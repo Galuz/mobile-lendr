@@ -1,20 +1,19 @@
-# mobile-lendr
+# in this web application u can:
+# *Register
+# *Login
+# *Logout.
+# *See a list of pokemon
+# *Search a pokemon on the list
+# *See the moves of each pokemon. 
+# *Also you can see you email user in navbar.
 
-## Build Setup
+# To make redirection for auth process i used a middleware,
+# vuex to store pokemon move details, and fires3tore to use authentication endpoints.
 
-```bash
+# to run this application:
+
 # install dependencies
 $ npm install
 
 # serve with hot reload at localhost:3000
 $ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
